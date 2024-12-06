@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mach-mit-O-Mat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="mach-mit-omat">
+    <div id="start" class="section">
+      <h1>Mach-mit-O-Mat</h1>
+      <p>Finde heraus, welche Tätigkeit im DRK am besten zu dir passt!</p>
+      <button id="start-button">Los geht's</button>
+    </div>
+
+    <div id="quiz" class="section hidden">
+      <h2 id="question-title">Frage 1</h2>
+      <p id="question-text"></p>
+      <div id="answers">
+        <button class="answer" data-score="5">Stimme voll zu</button>
+        <button class="answer" data-score="4">Stimme eher zu</button>
+        <button class="answer" data-score="3">Neutral</button>
+        <button class="answer" data-score="2">Stimme eher nicht zu</button>
+        <button class="answer" data-score="1">Stimme gar nicht zu</button>
+      </div>
+    </div>
+
+    <div id="result" class="section hidden">
+      <h2>Dein Ergebnis</h2>
+      <p id="result-text"></p>
+      <button id="restart-button">Noch einmal!</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
