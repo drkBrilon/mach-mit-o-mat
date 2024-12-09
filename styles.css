@@ -82,13 +82,42 @@ header h1 {
     font-size: 1.2rem;
 }
 
-.result-bar {
-    background-color: #e60005;
-    color: white;
-    text-align: left;
-    padding: 5px 10px;
-    border-radius: 5px;
+.result-item {
+    display: flex;
+    align-items: center;
     margin: 10px 0;
-    width: 0;
+    font-size: 1rem;
+}
+
+.result-label {
+    flex: 1;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.result-bar-container {
+    flex: 4;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+    position: relative;
+}
+
+.result-bar {
+    height: 100%;
+    background-color: #e60005;
     transition: width 1s ease;
+    text-align: right;
+    line-height: 20px;
+    color: white;
+    padding-right: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.result-percentage {
+    margin-left: 15px;
+    color: #333;
+    font-size: 0.9rem;
 }
