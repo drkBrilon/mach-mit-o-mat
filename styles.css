@@ -14,8 +14,14 @@ header {
     padding: 20px;
 }
 
+header img#logo {
+    display: block;
+    margin: 0 auto;
+    width: 100px; /* Passe die Größe des Logos an */
+}
+
 header h1 {
-    margin: 0;
+    margin: 10px 0 5px;
     font-size: 2rem;
 }
 
@@ -74,4 +80,15 @@ header h1 {
 #results {
     margin: 20px 0;
     font-size: 1.2rem;
+}
+
+.result-bar {
+    background-color: #e60005;
+    color: white;
+    text-align: left;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    width: 0;
+    transition: width 1s ease;
 }
