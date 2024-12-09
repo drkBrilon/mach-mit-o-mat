@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mach-mit-O-Mat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Mach-mit-O-Mat</h1>
+            <p>Finde heraus, welcher Fachbereich im DRK Brilon am besten zu dir passt!</p>
+        </header>
+
+        <div id="question-container">
+            <div id="progress-bar"></div>
+            <div id="question-box">
+                <h2 id="question">Frage wird geladen...</h2>
+                <div id="answers">
+                    <button class="answer" data-value="2">Stimme voll zu</button>
+                    <button class="answer" data-value="1">Stimme eher zu</button>
+                    <button class="answer" data-value="0">Neutral</button>
+                    <button class="answer" data-value="-1">Stimme eher nicht zu</button>
+                    <button class="answer" data-value="-2">Stimme nicht zu</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="result-container" style="display: none;">
+            <h2>Dein Ergebnis</h2>
+            <p>Deine Fachbereichs-Prioritäten:</p>
+            <div id="results"></div>
+            <p>Du möchtest mehr erfahren? <a href="https://www.drk-brilon.de" target="_blank">Hier geht's zum DRK Brilon</a>.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
