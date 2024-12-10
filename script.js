@@ -1,48 +1,44 @@
-// script.js
+// Definiere die Fragen und die zugehörigen Kategorien
 const questions = [
     { text: "Ich helfe gerne Menschen in medizinischen Notfällen.", category: "Sanitätsdienst" },
-    { text: "Ich bin bereit, medizinisches Wissen zu erlernen und anzuwenden.", category: "Sanitätsdienst" },
-    { text: "Ich kann gut Ruhe bewahren, auch in stressigen Situationen.", category: "Sanitätsdienst" },
-    { text: "Ich arbeite gerne in einem Team, das medizinische Hilfe leistet.", category: "Sanitätsdienst" },
-    { text: "Ich bin bereit, mich regelmäßig fortzubilden.", category: "Sanitätsdienst" },
-    { text: "Ich habe kein Problem damit, in unvorhergesehenen Situationen zu handeln.", category: "Sanitätsdienst" },
-
-    { text: "Ich koche und bereite gerne Mahlzeiten für viele Menschen zu.", category: "Betreuungs- & Verpflegungsdienst" },
-    { text: "Ich arbeite gerne in einem Team, das sich um die Versorgung kümmert.", category: "Betreuungs- & Verpflegungsdienst" },
-    { text: "Ich bin gut darin, anderen Menschen in schwierigen Situationen zu helfen.", category: "Betreuungs- & Verpflegungsdienst" },
-    { text: "Ich finde es erfüllend, Menschen in Notlagen zu betreuen.", category: "Betreuungs- & Verpflegungsdienst" },
-    { text: "Ich organisiere gerne die Versorgung von größeren Gruppen.", category: "Betreuungs- & Verpflegungsdienst" },
-    { text: "Ich bin bereit, mich auf außergewöhnliche Situationen vorzubereiten.", category: "Betreuungs- & Verpflegungsdienst" },
-
-    { text: "Ich interessiere mich für Technik und deren praktische Anwendung.", category: "Technik, Sicherheit & Logistik" },
-    { text: "Ich habe keine Angst, Geräte und Maschinen zu bedienen.", category: "Technik, Sicherheit & Logistik" },
-    { text: "Ich sorge gerne dafür, dass alles sicher und organisiert abläuft.", category: "Technik, Sicherheit & Logistik" },
-    { text: "Ich bin bereit, Verantwortung für technische Abläufe zu übernehmen.", category: "Technik, Sicherheit & Logistik" },
-    { text: "Ich finde es spannend, technische Probleme zu lösen.", category: "Technik, Sicherheit & Logistik" },
-    { text: "Ich bin praktisch veranlagt und arbeite gerne mit Werkzeugen.", category: "Technik, Sicherheit & Logistik" },
-
-    { text: "Ich verbringe gerne Zeit in der Natur, auch unter schwierigen Bedingungen.", category: "Bergwacht" },
-    { text: "Ich bin körperlich fit und liebe Herausforderungen.", category: "Bergwacht" },
-    { text: "Ich bin bereit, mich auf schwierige Rettungseinsätze vorzubereiten.", category: "Bergwacht" },
-    { text: "Ich habe keine Höhenangst und kann gut mit schwierigen Geländesituationen umgehen.", category: "Bergwacht" },
-    { text: "Ich bin bereit, in einer Einsatzgruppe für Naturrettung zu arbeiten.", category: "Bergwacht" },
-    { text: "Ich habe Freude an Teamarbeit in anspruchsvollen Outdoor-Einsätzen.", category: "Bergwacht" },
-
-    { text: "Ich interessiere mich für Computer, Funk und Kommunikation.", category: "Informations- und Kommunikationstechnik" },
-    { text: "Ich finde es spannend, Informationen zu koordinieren und weiterzugeben.", category: "Informations- und Kommunikationstechnik" },
-    { text: "Ich möchte sicherstellen, dass im Einsatz die Kommunikation funktioniert.", category: "Informations- und Kommunikationstechnik" },
-    { text: "Ich arbeite gerne mit moderner Technik und Software.", category: "Informations- und Kommunikationstechnik" },
-    { text: "Ich bin bereit, bei Einsätzen technische Kommunikationsmittel zu bedienen.", category: "Informations- und Kommunikationstechnik" },
-    { text: "Ich habe ein Händchen für den Umgang mit elektronischen Geräten.", category: "Informations- und Kommunikationstechnik" },
-
-    { text: "Ich finde es wichtig, Blutspenden zu organisieren.", category: "Blutspendedienst" },
-    { text: "Ich arbeite gerne an sozialen Projekten, die Leben retten.", category: "Blutspendedienst" },
-    { text: "Ich habe ein organisatorisches Talent für Veranstaltungen.", category: "Blutspendedienst" },
-    { text: "Ich möchte dazu beitragen, dass Blutspenden reibungslos ablaufen.", category: "Blutspendedienst" },
-    { text: "Ich bin bereit, Menschen über die Wichtigkeit von Blutspenden aufzuklären.", category: "Blutspendedienst" },
-    { text: "Ich kann gut auf Menschen zugehen und sie motivieren.", category: "Blutspendedienst" },
+    { text: "Ich interessiere mich für Erste-Hilfe-Maßnahmen und ihre Anwendung.", category: "Sanitätsdienst" },
+    { text: "Ich möchte bei Veranstaltungen medizinische Hilfe leisten.", category: "Sanitätsdienst" },
+    { text: "Ich organisiere gerne die Verpflegung in Notlagen.", category: "Betreuungs- & Verpflegungsdienst" },
+    { text: "Ich interessiere mich für die Betreuung von Menschen in Notunterkünften.", category: "Betreuungs- & Verpflegungsdienst" },
+    { text: "Ich plane und bereite gerne große Verpflegungsaktionen vor.", category: "Betreuungs- & Verpflegungsdienst" },
+    { text: "Ich bin technikbegeistert und arbeite gerne an Logistikprojekten.", category: "Technik, Sicherheit & Logistik" },
+    { text: "Ich unterstütze gerne bei der Instandhaltung von technischer Ausrüstung.", category: "Technik, Sicherheit & Logistik" },
+    { text: "Ich interessiere mich für Sicherheits- und Wartungsaufgaben.", category: "Technik, Sicherheit & Logistik" },
+    { text: "Ich bin gerne in der Natur und habe Interesse an Rettungsdiensten in den Bergen.", category: "Bergwacht" },
+    { text: "Ich bin sportlich und habe eine Leidenschaft für Bergsteigen.", category: "Bergwacht" },
+    { text: "Ich interessiere mich für den Schutz und die Erhaltung der Natur.", category: "Bergwacht" },
+    { text: "Ich interessiere mich für Informations- und Kommunikationstechnik.", category: "Informations- und Kommunikationstechnik" },
+    { text: "Ich möchte technische Kommunikationssysteme betreuen.", category: "Informations- und Kommunikationstechnik" },
+    { text: "Ich arbeite gerne mit Daten und Netzwerken.", category: "Informations- und Kommunikationstechnik" },
+    { text: "Ich engagiere mich gerne bei der Organisation von Blutspendeaktionen.", category: "Blutspendedienst" },
+    { text: "Ich finde es wichtig, Menschenleben durch Blutspenden zu retten.", category: "Blutspendedienst" },
+    { text: "Ich möchte helfen, Blutspendetermine zu organisieren.", category: "Blutspendedienst" },
+    // Weitere Fragen für alle Kategorien
+    { text: "Ich möchte bei Sportveranstaltungen als Sanitäter helfen.", category: "Sanitätsdienst" },
+    { text: "Ich kümmere mich gerne um den Aufbau von Notunterkünften.", category: "Betreuungs- & Verpflegungsdienst" },
+    { text: "Ich repariere gerne technische Geräte.", category: "Technik, Sicherheit & Logistik" },
+    { text: "Ich interessiere mich für die Bergrettung in Notsituationen.", category: "Bergwacht" },
+    { text: "Ich möchte sicherstellen, dass Kommunikationssysteme reibungslos laufen.", category: "Informations- und Kommunikationstechnik" },
+    { text: "Ich möchte einen Beitrag zur Gesundheit anderer leisten.", category: "Blutspendedienst" },
+    { text: "Ich bin gerne Teil eines Einsatzteams bei Rettungsaktionen.", category: "Sanitätsdienst" },
+    { text: "Ich möchte bei der Essensverteilung in Notfällen helfen.", category: "Betreuungs- & Verpflegungsdienst" },
+    { text: "Ich arbeite gerne in einem Team mit technischem Fokus.", category: "Technik, Sicherheit & Logistik" },
+    { text: "Ich möchte in der Natur aktiv mithelfen.", category: "Bergwacht" },
+    { text: "Ich interessiere mich für die digitale Kommunikation.", category: "Informations- und Kommunikationstechnik" },
+    { text: "Ich finde es wichtig, Blutspender zu motivieren.", category: "Blutspendedienst" },
+    { text: "Ich möchte in Notfällen Leben retten können.", category: "Sanitätsdienst" },
+    { text: "Ich plane gerne Verpflegungsaktionen für viele Menschen.", category: "Betreuungs- & Verpflegungsdienst" },
+    { text: "Ich möchte technische Ausrüstung bedienen und warten.", category: "Technik, Sicherheit & Logistik" },
+    { text: "Ich bin sportlich und möchte Menschen in schwierigen Umgebungen retten.", category: "Bergwacht" },
+    { text: "Ich interessiere mich für die Organisation von Kommunikationsdiensten.", category: "Informations- und Kommunikationstechnik" }
 ];
 
+// Kategorien und ihre Punktestände
 const scores = {
     "Sanitätsdienst": 0,
     "Betreuungs- & Verpflegungsdienst": 0,
@@ -52,23 +48,40 @@ const scores = {
     "Blutspendedienst": 0,
 };
 
+// Maximal mögliche Punkte je Kategorie
+const maxScores = {
+    "Sanitätsdienst": 0,
+    "Betreuungs- & Verpflegungsdienst": 0,
+    "Technik, Sicherheit & Logistik": 0,
+    "Bergwacht": 0,
+    "Informations- und Kommunikationstechnik": 0,
+    "Blutspendedienst": 0,
+};
+
+// Beschreibung der Kategorien
 const descriptions = {
-    "Sanitätsdienst": "Medizinische Erstversorgung und Hilfe in Notfällen bei Großveranstaltungen.",
-    "Betreuungs- & Verpflegungsdienst": "Hilfe bei der Betreuung und Versorgung von Einsatzkräften und Betroffenen in Notlagen.",
-    "Technik, Sicherheit & Logistik": "Organisation und Sicherstellung technischer Prozesse im Einsatzspektrum.",
-    "Bergwacht": "Der Rettungsdienst in den Bergen und unzugänglichen Gebieten, dank Spezialausrüstung.",
-    "Informations- und Kommunikationstechnik": "Sicherstellung von Kommunikation, IT und Fernmeldetechnik.",
+    "Sanitätsdienst": "Medizinische Erstversorgung und Hilfe in Notfällen.",
+    "Betreuungs- & Verpflegungsdienst": "Hilfe bei der Betreuung und Versorgung von Menschen.",
+    "Technik, Sicherheit & Logistik": "Organisation und Sicherstellung technischer Prozesse.",
+    "Bergwacht": "Rettungsdienste in den Bergen und unzugänglichen Gebieten.",
+    "Informations- und Kommunikationstechnik": "Sicherstellung von Kommunikation und IT.",
     "Blutspendedienst": "Organisation von Blutspendeaktionen, die Leben retten.",
 };
 
+// Berechne maximale Punktzahl pro Kategorie
+questions.forEach(question => {
+    maxScores[question.category] += 2;
+});
+
+// Initialisiere Fragen
 let currentQuestionIndex = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
     const questionText = document.getElementById("question");
     const progressBar = document.getElementById("progress-bar");
     const answers = document.querySelectorAll(".answer");
-    const resultsContainer = document.getElementById("result-container");
     const questionContainer = document.getElementById("question-container");
+    const resultsContainer = document.getElementById("result-container");
     const results = document.getElementById("results");
 
     function loadQuestion() {
@@ -76,7 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
             showResults();
             return;
         }
-
         const currentQuestion = questions[currentQuestionIndex];
         questionText.textContent = currentQuestion.text;
         progressBar.style.width = `${((currentQuestionIndex + 1) / questions.length) * 100}%`;
@@ -86,11 +98,10 @@ document.addEventListener("DOMContentLoaded", () => {
         questionContainer.style.display = "none";
         resultsContainer.style.display = "block";
 
-        const totalPossiblePoints = questions.length * 2;
         const sortedResults = Object.entries(scores).sort((a, b) => b[1] - a[1]);
 
         sortedResults.forEach(([category, score]) => {
-            const percentage = Math.round((score / totalPossiblePoints) * 100);
+            const percentage = Math.round((score / maxScores[category]) * 100);
 
             const resultItem = document.createElement("div");
             resultItem.classList.add("result-item");
@@ -108,23 +119,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const bar = document.createElement("div");
             bar.classList.add("result-bar");
             bar.style.width = `${percentage}%`;
-            bar.textContent = `${score} Punkte`;
+            bar.textContent = `${percentage}%`;
 
             barContainer.appendChild(bar);
-
-            const percentageText = document.createElement("div");
-            percentageText.classList.add("result-percentage");
-            percentageText.textContent = `${percentage}%`;
 
             resultItem.appendChild(label);
             resultItem.appendChild(description);
             resultItem.appendChild(barContainer);
-            resultItem.appendChild(percentageText);
             results.appendChild(resultItem);
         });
     }
-    
-   answers.forEach(answer => {
+
+    answers.forEach(answer => {
         answer.addEventListener("click", () => {
             const value = parseInt(answer.dataset.value);
             const category = questions[currentQuestionIndex].category;
